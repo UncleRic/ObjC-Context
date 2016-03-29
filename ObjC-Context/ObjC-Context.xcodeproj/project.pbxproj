@@ -14,6 +14,7 @@
 		18AFE0151CAB097C00DBB87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AFE0141CAB097C00DBB87D /* Assets.xcassets */; };
 		18AFE0181CAB097C00DBB87D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AFE0161CAB097C00DBB87D /* LaunchScreen.storyboard */; };
 		18AFE0231CAB0D8300DBB87D /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE0221CAB0D8300DBB87D /* GameBoardView.m */; };
+		18AFE0301CAB314000DBB87D /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE02F1CAB314000DBB87D /* GlobalVariables.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		18AFE0191CAB097C00DBB87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18AFE0211CAB0D8300DBB87D /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBoardView.h; path = "ObjC-Context/GameBoardView.h"; sourceTree = "<group>"; };
 		18AFE0221CAB0D8300DBB87D /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardView.m; path = "ObjC-Context/GameBoardView.m"; sourceTree = "<group>"; };
+		18AFE02E1CAB314000DBB87D /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalVariables.h; path = "ObjC-Context/GlobalVariables.h"; sourceTree = "<group>"; };
+		18AFE02F1CAB314000DBB87D /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalVariables.m; path = "ObjC-Context/GlobalVariables.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +48,8 @@
 		18AFDFFC1CAB097C00DBB87D = {
 			isa = PBXGroup;
 			children = (
+				18AFE02E1CAB314000DBB87D /* GlobalVariables.h */,
+				18AFE02F1CAB314000DBB87D /* GlobalVariables.m */,
 				18AFE0241CAB0D8E00DBB87D /* Views */,
 				18AFE0071CAB097C00DBB87D /* ObjC-Context */,
 				18AFE0061CAB097C00DBB87D /* Products */,
@@ -181,6 +186,7 @@
 				18AFE0101CAB097C00DBB87D /* MainViewController.m in Sources */,
 				18AFE00D1CAB097C00DBB87D /* AppDelegate.m in Sources */,
 				18AFE00A1CAB097C00DBB87D /* main.m in Sources */,
+				18AFE0301CAB314000DBB87D /* GlobalVariables.m in Sources */,
 				18AFE0231CAB0D8300DBB87D /* GameBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +336,7 @@
 				18AFE01E1CAB097C00DBB87D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -6,8 +6,12 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "MainViewController.h"
+#import "GlobalVariables.h"
 
-@interface MainViewController ()
+
+@interface MainViewController () {
+    struct Thickness  thickness;
+}
 
 @end
 
@@ -15,8 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    thickness.gridLine = 4.0;
+    thickness.innerBorder = 1.0;
+    thickness.outerBorder = 1.0;
+    thickness.mark = 16.0;
+    thickness.markMargin = 20.0;
+    thickness.platformMargin = 16.0;
+    thickness.winningLine = 8;
+    thickness.winningLineInset = 8;
 }
+
 
 // -----------------------------------------------------------------------------------------------------------------
 - (IBAction)exitAction:(UIBarButtonItem *)sender {
