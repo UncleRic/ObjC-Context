@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -76,14 +77,14 @@
                                 <exclude reference="peb-MP-YXN"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="RsY-pJ-D8u"/>
-                                <exclude reference="eQR-uw-v7A"/>
-                                <exclude reference="zhK-ad-XyA"/>
+                                <exclude reference="Rpv-fA-wnB"/>
                                 <exclude reference="KpR-Or-9sa"/>
                                 <exclude reference="bQC-bQ-uBl"/>
                                 <exclude reference="Hm7-lB-OZb"/>
                                 <exclude reference="UQz-te-YJa"/>
-                                <exclude reference="Rpv-fA-wnB"/>
+                                <exclude reference="RsY-pJ-D8u"/>
+                                <exclude reference="eQR-uw-v7A"/>
+                                <exclude reference="zhK-ad-XyA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -93,14 +94,14 @@
                                 <include reference="peb-MP-YXN"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="RsY-pJ-D8u"/>
-                                <include reference="eQR-uw-v7A"/>
-                                <include reference="zhK-ad-XyA"/>
+                                <include reference="Rpv-fA-wnB"/>
                                 <include reference="KpR-Or-9sa"/>
                                 <include reference="bQC-bQ-uBl"/>
                                 <include reference="Hm7-lB-OZb"/>
                                 <include reference="UQz-te-YJa"/>
-                                <include reference="Rpv-fA-wnB"/>
+                                <include reference="RsY-pJ-D8u"/>
+                                <include reference="eQR-uw-v7A"/>
+                                <include reference="zhK-ad-XyA"/>
                             </mask>
                         </variation>
                     </view>

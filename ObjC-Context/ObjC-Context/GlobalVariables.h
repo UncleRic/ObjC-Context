@@ -8,17 +8,17 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-extern CGFloat const gridLine;
-extern CGFloat const innerBorder;
-extern CGFloat const mark;
-extern CGFloat const markMargin;
-extern CGFloat const outerBorder;
-extern CGFloat const platformMargin;
-extern CGFloat const winningLine;
-extern CGFloat const winningLineInset;
+extern CGFloat const kGridLine;
+extern CGFloat const kInnerBorder;
+extern CGFloat const kMark;
+extern CGFloat const kMarkMargin;
+extern CGFloat const kOuterBorder;
+extern CGFloat const kPlatformMargin;
+extern CGFloat const kWinningLine;
+extern CGFloat const kWinningLineInset;
 
-@interface GlobalVariables : NSObject
-typedef struct Thickness {
+// ...probably don't need this struct:
+extern struct Thickness {
     CGFloat gridLine;
     CGFloat innerBorder;
     CGFloat mark;
@@ -27,6 +27,23 @@ typedef struct Thickness {
     CGFloat platformMargin;
     CGFloat winningLine;
     CGFloat winningLineInset;
-} date;
+} thickness;
+
+// ===========================================================================================================
+
+@interface UIColor (ColorCategory)
++ (UIColor *)colorWithHexString:(NSString *)colorString;
++ (UIColor *)gridLineColor;
++ (UIColor *)innerBorderColor;
++ (UIColor *)markOColor;
++ (UIColor *)markXColor;
++ (UIColor *)outerBorderColor;
++ (UIColor *)platformColor;
++ (UIColor *)winningLineColor;
+@end
+
+// ===========================================================================================================
+
+@interface GlobalVariables : NSObject
 
 @end
