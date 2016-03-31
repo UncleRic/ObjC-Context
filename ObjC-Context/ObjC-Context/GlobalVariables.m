@@ -8,10 +8,10 @@
 #import "GlobalVariables.h"
 
 CGFloat const kGridLine = 4.0;
-CGFloat const kInnerBorder = 1.0;
+CGFloat const kOuterBorder = 4.0;
+CGFloat const kInnerBorder = 4.0;
 CGFloat const kMark = 16.0;
 CGFloat const kMarkMargin = 20.0;
-CGFloat const kOuterBorder = 1.0;
 CGFloat const kPlatformMargin = 16.0;
 CGFloat const kWinningLine = 8.0;
 CGFloat const kWinningLineInset = 8.0;
@@ -67,6 +67,17 @@ CGFloat const kWinningLineInset = 8.0;
 + (UIColor *)winningLineColor {
     return [UIColor redColor];
 }
+@end
+
+// ===========================================================================================================
+
+@implementation GameContext
++ (void)fillRect:(CGRect)rect withColor:(UIColor *)color {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+}
+
 @end
 
 // ===========================================================================================================

@@ -22,6 +22,8 @@
 }
 
 // -----------------------------------------------------------------------------------------------------------------
+#pragma mark - Rect methods
+
 
 - (CGRect)outerBorderRect {
     return self.frame;
@@ -32,10 +34,11 @@
 }
 
 - (CGRect)platformRect {
-    return [self insetRect:[self outerBorderRect] byAmount:kInnerBorder];
+    return [self insetRect:[self innerBorderRect] byAmount:kInnerBorder];
 }
 
 // -----------------------------------------------------------------------------------------------------------------
+#pragma mark -
 
 - (CGPoint)bottomCenterOfRect:(CGRect)myRect{
     return CGPointMake(CGRectGetMidX(myRect), CGRectGetMaxY(myRect));

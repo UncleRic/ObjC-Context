@@ -29,8 +29,15 @@
 
 - (void)renderBoarder {
     [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor redColor] theWidth:kOuterBorder];
-    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor blueColor] theWidth:kInnerBorder];
+    [self strokeRect:[self.layout innerBorderRect] theColor:[UIColor blueColor] theWidth:kInnerBorder];
+    
 }
+
+- (void)renderPlatform {
+    [GameContext fillRect:[self.layout innerBorderRect] withColor:[UIColor greenColor]];
+}
+
+
 
 // -----------------------------------------------------------------------------------------------------------------
 
@@ -40,6 +47,7 @@
         
         [super drawRect:rect];
         [self renderBoarder];
+        [self renderPlatform];
         //    renderBorder()
         //    renderPlatform()
         //    renderGridLines()
