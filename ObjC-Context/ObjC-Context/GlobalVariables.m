@@ -72,11 +72,38 @@ CGFloat const kWinningLineInset = 8.0;
 // ===========================================================================================================
 
 @implementation GameContext
+
++ (void)strokeLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor *)color havingWidth:(CGFloat)width andLineCap:(CGLineCap)lineCap {
+   CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, width);
+    CGContextSetLineCap(context, lineCap);
+    CGContextMoveToPoint(context, from.x, from.y);
+    CGContextAddLineToPoint(context, to.x, to.y);
+    CGContextStrokePath(context);
+}
+
 + (void)fillRect:(CGRect)rect withColor:(UIColor *)color {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, rect);
 }
+
++ (void)strokeRect:(CGRect)rect withColor:(UIColor *)color havingWidth:(CGFloat)width {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, width);
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextAddRect(context, rect);
+    CGContextStrokePath(context);
+}
+
++ (void)strokeEllipseInRect:(CGRect)rect withColor:(UIColor *)color havingWidth:(CGFloat)width {
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, color.CGColor);
+    CGContextSetLineWidth(context, width);
+    CGContextStrokePath(context);
+}
+
 
 @end
 

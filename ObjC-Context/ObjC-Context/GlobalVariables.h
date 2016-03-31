@@ -34,7 +34,11 @@ extern CGFloat const kWinningLineInset;
 
 @interface GameContext:NSObject
 + (void)fillRect:(CGRect)rect withColor:(UIColor *)color;
++ (void)strokeRect:(CGRect)rect withColor:(UIColor *)color havingWidth:(CGFloat)width;
++ (void)strokeEllipseInRect:(CGRect)rect withColor:(UIColor *)color havingWidth:(CGFloat)width;
++ (void)strokeLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor *)color havingWidth:(CGFloat)width andLineCap:(CGLineCap)lineCap;
 @end
+
 
 // ===========================================================================================================
 
