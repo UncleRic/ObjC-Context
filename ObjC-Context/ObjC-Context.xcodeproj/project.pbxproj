@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1880DFE91CAC86C200AC3D12 /* GameBoardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880DFE81CAC86C200AC3D12 /* GameBoardLayout.m */; };
 		18AFE00A1CAB097C00DBB87D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE0091CAB097C00DBB87D /* main.m */; };
 		18AFE00D1CAB097C00DBB87D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE00C1CAB097C00DBB87D /* AppDelegate.m */; };
 		18AFE0101CAB097C00DBB87D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE00F1CAB097C00DBB87D /* MainViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1880DFE71CAC86C200AC3D12 /* GameBoardLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBoardLayout.h; path = "ObjC-Context/GameBoardLayout.h"; sourceTree = "<group>"; };
+		1880DFE81CAC86C200AC3D12 /* GameBoardLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardLayout.m; path = "ObjC-Context/GameBoardLayout.m"; sourceTree = "<group>"; };
 		18AFE0051CAB097C00DBB87D /* ObjC-Context.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ObjC-Context.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AFE0091CAB097C00DBB87D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18AFE00B1CAB097C00DBB87D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,13 +48,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18AFDFFC1CAB097C00DBB87D = {
+		1880DFE51CAC859100AC3D12 /* Global Variables */ = {
 			isa = PBXGroup;
 			children = (
 				18AFE02E1CAB314000DBB87D /* GlobalVariables.h */,
 				18AFE02F1CAB314000DBB87D /* GlobalVariables.m */,
+			);
+			name = "Global Variables";
+			sourceTree = "<group>";
+		};
+		1880DFE61CAC85C600AC3D12 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				18AFE0111CAB097C00DBB87D /* Main.storyboard */,
+				18AFE0161CAB097C00DBB87D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		18AFDFFC1CAB097C00DBB87D = {
+			isa = PBXGroup;
+			children = (
+				1880DFE71CAC86C200AC3D12 /* GameBoardLayout.h */,
+				1880DFE81CAC86C200AC3D12 /* GameBoardLayout.m */,
+				18AFE01F1CAB09E300DBB87D /* AppDelegate */,
+				1880DFE51CAC859100AC3D12 /* Global Variables */,
+				18AFE0201CAB09FD00DBB87D /* ViewController */,
 				18AFE0241CAB0D8E00DBB87D /* Views */,
-				18AFE0071CAB097C00DBB87D /* ObjC-Context */,
+				1880DFE61CAC85C600AC3D12 /* Storyboards */,
+				18AFE0071CAB097C00DBB87D /* Resources */,
 				18AFE0061CAB097C00DBB87D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,17 +89,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18AFE0071CAB097C00DBB87D /* ObjC-Context */ = {
+		18AFE0071CAB097C00DBB87D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18AFE01F1CAB09E300DBB87D /* AppDelegate */,
-				18AFE0201CAB09FD00DBB87D /* ViewController */,
-				18AFE0111CAB097C00DBB87D /* Main.storyboard */,
-				18AFE0141CAB097C00DBB87D /* Assets.xcassets */,
-				18AFE0161CAB097C00DBB87D /* LaunchScreen.storyboard */,
 				18AFE0191CAB097C00DBB87D /* Info.plist */,
+				18AFE0141CAB097C00DBB87D /* Assets.xcassets */,
 				18AFE0081CAB097C00DBB87D /* Supporting Files */,
 			);
+			name = Resources;
 			path = "ObjC-Context";
 			sourceTree = "<group>";
 		};
@@ -93,6 +115,7 @@
 				18AFE00C1CAB097C00DBB87D /* AppDelegate.m */,
 			);
 			name = AppDelegate;
+			path = "ObjC-Context";
 			sourceTree = "<group>";
 		};
 		18AFE0201CAB09FD00DBB87D /* ViewController */ = {
@@ -102,6 +125,7 @@
 				18AFE00F1CAB097C00DBB87D /* MainViewController.m */,
 			);
 			name = ViewController;
+			path = "ObjC-Context";
 			sourceTree = "<group>";
 		};
 		18AFE0241CAB0D8E00DBB87D /* Views */ = {
@@ -185,6 +209,7 @@
 			files = (
 				18AFE0101CAB097C00DBB87D /* MainViewController.m in Sources */,
 				18AFE00D1CAB097C00DBB87D /* AppDelegate.m in Sources */,
+				1880DFE91CAC86C200AC3D12 /* GameBoardLayout.m in Sources */,
 				18AFE00A1CAB097C00DBB87D /* main.m in Sources */,
 				18AFE0301CAB314000DBB87D /* GlobalVariables.m in Sources */,
 				18AFE0231CAB0D8300DBB87D /* GameBoardView.m in Sources */,
@@ -200,6 +225,7 @@
 				18AFE0121CAB097C00DBB87D /* Base */,
 			);
 			name = Main.storyboard;
+			path = "ObjC-Context";
 			sourceTree = "<group>";
 		};
 		18AFE0161CAB097C00DBB87D /* LaunchScreen.storyboard */ = {
@@ -208,6 +234,7 @@
 				18AFE0171CAB097C00DBB87D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = "ObjC-Context";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

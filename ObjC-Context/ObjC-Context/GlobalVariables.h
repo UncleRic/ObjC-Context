@@ -35,9 +35,9 @@ extern struct Thickness {
 + (UIColor *)colorWithHexString:(NSString *)colorString;
 + (UIColor *)gridLineColor;
 + (UIColor *)innerBorderColor;
++ (UIColor *)outerBorderColor;
 + (UIColor *)markOColor;
 + (UIColor *)markXColor;
-+ (UIColor *)outerBorderColor;
 + (UIColor *)platformColor;
 + (UIColor *)winningLineColor;
 @end
