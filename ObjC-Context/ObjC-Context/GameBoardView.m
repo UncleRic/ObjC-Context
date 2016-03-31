@@ -15,17 +15,12 @@
 
 @implementation GameBoardView
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _layout = [[GameBoardLayout alloc] initWithFrame:self.frame andMarksPerAxis:3];
-    }
-    return self;
+- (void)awakeFromNib {
+    _layout = [[GameBoardLayout alloc] initWithFrame:self.frame andMarksPerAxis:3];
+    return;
 }
 
-//private var layout: GameBoardLayout {
-//    return GameBoardLayout(frame: frame, marksPerAxis: 3)
-//}
+// -----------------------------------------------------------------------------------------------------------------
 
 - (void)strokeRect:(CGRect)rect theColor:(UIColor*)color theWidth:(CGFloat) width {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -35,39 +30,23 @@
     CGContextStrokePath(context);
 }
 
+// -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderBoarder {
-    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor outerBorderColor] theWidth:kOuterBorder];
-    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor outerBorderColor] theWidth:kInnerBorder];
+    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor redColor] theWidth:kOuterBorder];
+    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor blueColor] theWidth:kInnerBorder];
 }
 
-//
-//func renderBorder() {
-//    let context = UIGraphicsGetCurrentContext()!
-//    context.strokeRect(layout.outerBorderRect, color: UIColor.outerBorder, width: Thickness.outerBorder)
-//    context.strokeRect(layout.innerBorderRect, color: UIColor.innerBorder, width: Thickness.innerBorder)
-//}
-
-//func strokeRect(rect: CGRect, color: UIColor, width: CGFloat) {
-//    CGContextSetLineWidth(self, width)
-//    CGContextSetStrokeColorWithColor(self, color.CGColor)
-//    CGContextAddRect(self, rect)
-//    CGContextStrokePath(self)
-//}
+// -----------------------------------------------------------------------------------------------------------------
 
 
-//func renderBorder() {
-//    let context = UIGraphicsGetCurrentContext()!
-//    context.strokeRect(layout.outerBorderRect, color: UIColor.outerBorder, width: Thickness.outerBorder)
-//    context.strokeRect(layout.innerBorderRect, color: UIColor.innerBorder, width: Thickness.innerBorder)
-//}
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+    [super drawRect:rect];
+    [self renderBoarder];
+//    renderBorder()
+//    renderPlatform()
+//    renderGridLines()
 }
-*/
+
 
 @end

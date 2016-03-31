@@ -14,7 +14,6 @@
 
 @implementation GameBoardLayout
 - (instancetype)initWithFrame: (CGRect)frame andMarksPerAxis:(NSUInteger)marksPerAxis {
-    
     if (self = [super init]) {
         self.frame = frame;
         self.marksPerAxis = marksPerAxis;
@@ -22,12 +21,14 @@
     return self;
 }
 
+// -----------------------------------------------------------------------------------------------------------------
+
 - (CGRect)outerBorderRect {
     CGFloat width = self.frame.size.width;
     CGFloat height = self.frame.size.height;
-    CGFloat length = MIN(width, height) - kPlatformMargin*2;
+    CGFloat length = MIN(width, height);
     CGFloat x = (width/2-length/2); CGFloat y = (height/2 - length/2);
-    return CGRectMake(x, y, length, length);
+    return self.frame;
 }
 
 - (CGRect)innerBorderRect {

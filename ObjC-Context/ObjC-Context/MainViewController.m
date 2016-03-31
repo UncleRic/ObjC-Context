@@ -6,16 +6,16 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "MainViewController.h"
-
+#import "GameboardView.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet GameBoardView *gameBoardView;
 @end
 
 @implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     return;
 }
 

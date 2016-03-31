@@ -69,11 +69,10 @@
 		18AFDFFC1CAB097C00DBB87D = {
 			isa = PBXGroup;
 			children = (
-				1880DFE71CAC86C200AC3D12 /* GameBoardLayout.h */,
-				1880DFE81CAC86C200AC3D12 /* GameBoardLayout.m */,
 				18AFE01F1CAB09E300DBB87D /* AppDelegate */,
 				1880DFE51CAC859100AC3D12 /* Global Variables */,
 				18AFE0201CAB09FD00DBB87D /* ViewController */,
+				18DFCD5C1CAD8809000A5B2A /* Layout */,
 				18AFE0241CAB0D8E00DBB87D /* Views */,
 				1880DFE61CAC85C600AC3D12 /* Storyboards */,
 				18AFE0071CAB097C00DBB87D /* Resources */,
@@ -135,6 +134,15 @@
 				18AFE0221CAB0D8300DBB87D /* GameBoardView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		18DFCD5C1CAD8809000A5B2A /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				1880DFE71CAC86C200AC3D12 /* GameBoardLayout.h */,
+				1880DFE81CAC86C200AC3D12 /* GameBoardLayout.m */,
+			);
+			name = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
