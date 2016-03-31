@@ -6,7 +6,8 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import <UIKit/UIKit.h>
+#import "GameBoardLayout.h"
 
 @interface GameBoardView : UIView
-
+@property (nonatomic,retain)GameBoardLayout *layout;
 @end

@@ -7,6 +7,7 @@
 
 #import "MainViewController.h"
 #import "GameboardView.h"
+#import "GameboardLayout.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet GameBoardView *gameBoardView;
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     return;
+}
+
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)viewDidLayoutSubviews {
+    _gameBoardView.layout = [[GameBoardLayout alloc] initWithFrame:_gameBoardView.bounds andMarksPerAxis:3];
 }
 
 

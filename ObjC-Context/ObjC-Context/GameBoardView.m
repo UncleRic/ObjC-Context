@@ -7,18 +7,13 @@
 //
 
 #import "GameBoardView.h"
-#import "GameBoardLayout.h"
+
 
 @interface GameBoardView()
-@property (nonatomic,retain)GameBoardLayout *layout;
 @end
 
 @implementation GameBoardView
 
-- (void)awakeFromNib {
-    _layout = [[GameBoardLayout alloc] initWithFrame:self.frame andMarksPerAxis:3];
-    return;
-}
 
 // -----------------------------------------------------------------------------------------------------------------
 
@@ -41,11 +36,15 @@
 
 
 - (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
-    [self renderBoarder];
-//    renderBorder()
-//    renderPlatform()
-//    renderGridLines()
+    if (nil != self.layout) {
+        
+        [super drawRect:rect];
+        [self renderBoarder];
+        //    renderBorder()
+        //    renderPlatform()
+        //    renderGridLines()
+    }
+    
 }
 
 

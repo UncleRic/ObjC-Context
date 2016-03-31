@@ -24,10 +24,6 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (CGRect)outerBorderRect {
-    CGFloat width = self.frame.size.width;
-    CGFloat height = self.frame.size.height;
-    CGFloat length = MIN(width, height);
-    CGFloat x = (width/2-length/2); CGFloat y = (height/2 - length/2);
     return self.frame;
 }
 
