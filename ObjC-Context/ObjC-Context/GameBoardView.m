@@ -17,20 +17,9 @@
 
 // -----------------------------------------------------------------------------------------------------------------
 
-- (void)strokeRect:(CGRect)rect theColor:(UIColor*)color theWidth:(CGFloat) width {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth (context, kOuterBorder);
-    CGContextSetStrokeColorWithColor(context,color.CGColor);
-    CGContextAddRect(context, rect);
-    CGContextStrokePath(context);
-}
-
-// -----------------------------------------------------------------------------------------------------------------
-
 - (void)renderBoarder {
-    [self strokeRect:[self.layout outerBorderRect] theColor:[UIColor redColor] theWidth:kOuterBorder];
-    [self strokeRect:[self.layout innerBorderRect] theColor:[UIColor blueColor] theWidth:kInnerBorder];
-    
+    [GameContext strokeRect:[self.layout outerBorderRect] withColor:[UIColor redColor] havingWidth:kOuterBorder];
+    [GameContext strokeRect:[self.layout innerBorderRect] withColor:[UIColor redColor] havingWidth:kInnerBorder];
 }
 
 - (void)renderPlatform {
