@@ -7,6 +7,13 @@
 
 #import "GameBoardLayout.h"
 
+
+typedef struct {
+    CGPoint startPoint;
+    CGPoint endPoint;
+} LineStruct;
+
+
 @interface GameBoardLayout()
 @property(assign) CGRect frame;
 @property(assign) NSUInteger marksPerAxis;
@@ -21,11 +28,57 @@
     return self;
 }
 
+#pragma mark - Gridlines
+
+- (void)gridLines {
+    LineStruct line;
+    
+//    CGFloat cellLength = self.platformRect.size.width/self.marksPerAxis;
+//    NSMutableArray *lineNumbers = [NSMutableArray arrayWithCapacity:_marksPerAxis];
+//    
+//    
+//    line.startPoint = CGPointMake(2,3);
+//    line.endPoint = CGPointMake(5,6);
+//    
+//
+//    NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+//    NSArray *lineArray = [NSArray arrayWithObject:structValue];
+    
+//    let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
+//    CGFloat x = self.platformRect.minX + CGFloat(lineNumbers) * cellLength
+    
+    
+}
+
+//lazy var gridLines: [Line] = {
+//    let
+//    cellLength    = self.platformRect.width / CGFloat(self.marksPerAxis),
+//    lineNumbers   = 1..<self.marksPerAxis,
+//    verticalLines = lineNumbers.map { lineNumber -> Line in
+//        let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
+//        return Line(
+//                    startPoint: CGPoint(x: x, y: self.platformRect.minY),
+//                    endPoint:   CGPoint(x: x, y: self.platformRect.maxY))
+//    },
+
+
+
+
+//    horizontalLines = lineNumbers.map { lineNumber -> Line in
+//        let y = self.platformRect.minY + CGFloat(lineNumber) * cellLength
+//        return Line(
+//                    startPoint: CGPoint(x: self.platformRect.minX, y: y),
+//                    endPoint:   CGPoint(x: self.platformRect.maxX, y: y))
+//    }
+//    return verticalLines + horizontalLines
+//}()
+
 // -----------------------------------------------------------------------------------------------------------------
 #pragma mark - Rect methods
 
 
-- (CGRect)outerBorderRect {
+- (CGRect) outerBorderRect {
+    [self gridLines];
     return self.frame;
 }
 
