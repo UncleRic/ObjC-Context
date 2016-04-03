@@ -27,15 +27,9 @@
 
 - (void)renderGridLines {
     CGPoint from; CGPoint to;
+    NSArray *myArray = [self.layout gridLines];
     [GameContext strokeLineFrom:from to:to withColor:[UIColor gridLineColor] havingWidth:kGridLine andLineCap:kCGLineCapButt];
 }
-
-//func renderGridLines() {
-//    let context = UIGraphicsGetCurrentContext()!
-//    layout.gridLines.forEach {
-//        context.strokeLineFrom($0.startPoint, to: $0.endPoint, color: UIColor.gridLine, width: Thickness.gridLine, lineCap: .Butt)
-//    }
-//}
 
 
 // -----------------------------------------------------------------------------------------------------------------
@@ -47,8 +41,7 @@
         [super drawRect:rect];
         [self renderBoarder];
         [self renderPlatform];
-        
-        //    renderGridLines()
+        [self renderGridLines];
     }
     
 }

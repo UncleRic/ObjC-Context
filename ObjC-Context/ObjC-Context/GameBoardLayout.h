@@ -13,7 +13,7 @@
 - (CGRect)outerBorderRect;
 - (CGRect)innerBorderRect;
 - (CGRect)platformRect;
-
+- (NSArray *)gridLines;
 
 
 @end

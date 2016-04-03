@@ -30,74 +30,51 @@ typedef struct {
 
 #pragma mark - Gridlines
 
-- (void)gridLines {
+- (NSArray *)gridLines {
     LineStruct line;
     
     CGFloat cellLength = self.platformRect.size.width/self.marksPerAxis;
     
-    NSMutableArray *lineNumbers = [NSMutableArray arrayWithCapacity:_marksPerAxis];
+    NSMutableArray *verticalLines = [NSMutableArray arrayWithCapacity:_marksPerAxis];
+    NSMutableArray *horizontalLines = [NSMutableArray arrayWithCapacity:_marksPerAxis];
     
+    for (CGFloat lineNumber = 1; lineNumber < 3; lineNumber++) {
+        CGFloat x = (CGRectGetMinX(self.platformRect) + lineNumber) * cellLength;
+        line.startPoint = CGPointMake(x,CGRectGetMinY(self.platformRect));
+        line.endPoint = CGPointMake(x,CGRectGetMaxY(self.platformRect));
+        NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+        [verticalLines addObject:structValue];
+    }
     
-    line.startPoint = CGPointMake(2,3);
-    line.endPoint = CGPointMake(5,6);
+    for (CGFloat lineNumber = 1; lineNumber < 3; lineNumber++) {
+        CGFloat y = (CGRectGetMinY(self.platformRect) + lineNumber) * cellLength;
+        line.startPoint = CGPointMake(y,CGRectGetMinX(self.platformRect));
+        line.endPoint = CGPointMake(y,CGRectGetMaxX(self.platformRect));
+        NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+        [horizontalLines addObject:structValue];
+    }
     
-    NSArray *names = [lineNumbers mapObjectsUsingBlock:^(id obj, NSUInteger idx) {
-        return obj[@"name"];
-    }];
-
-    NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
-    NSArray *lineArray = [NSArray arrayWithObject:structValue];
+    [verticalLines addObjectsFromArray:horizontalLines];
     
- //   let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
- //   CGFloat x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
-    
-    CGRectGetMinX(self.platformRect);
-    
-    
-//startPoint: CGPoint(x: x, y: self.platformRect.minY),
-//endPoint:   CGPoint(x: x, y: self.platformRect.maxY))
-
-    
+    return verticalLines;
+ 
 }
 
-//lazy var gridLines: [Line] = {
-//    let
-//    cellLength    = self.platformRect.width / CGFloat(self.marksPerAxis),
-//    lineNumbers   = 1..<self.marksPerAxis,
-//    verticalLines = lineNumbers.map { lineNumber -> Line in
-//        let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
-//        return Line(
-//                    startPoint: CGPoint(x: x, y: self.platformRect.minY),
-//                    endPoint:   CGPoint(x: x, y: self.platformRect.maxY))
-//    },
-
-
-
-
-//    horizontalLines = lineNumbers.map { lineNumber -> Line in
-//        let y = self.platformRect.minY + CGFloat(lineNumber) * cellLength
-//        return Line(
-//                    startPoint: CGPoint(x: self.platformRect.minX, y: y),
-//                    endPoint:   CGPoint(x: self.platformRect.maxX, y: y))
-//    }
-//    return verticalLines + horizontalLines
-//}()
 
 // -----------------------------------------------------------------------------------------------------------------
 #pragma mark - Rect methods
 
 
 - (CGRect) outerBorderRect {
-    [self gridLines];
     return self.frame;
 }
 
 - (CGRect)innerBorderRect {
-    return [self insetRect:[self outerBorderRect] byAmount:kOuterBorder];
+    return [self insetRect:self.outerBorderRect byAmount:kOuterBorder];
 }
 
 - (CGRect)platformRect {
-    return [self insetRect:[self innerBorderRect] byAmount:kInnerBorder];
+    return [self insetRect:self.innerBorderRect byAmount:kInnerBorder];
 }
 
 // -----------------------------------------------------------------------------------------------------------------
