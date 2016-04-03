@@ -9,12 +9,39 @@
 #import "GlobalVariables.h"
 #import "GameBoardLayout.h"
 
-@interface GameBoardView()
+@interface GameBoardView() {
+    CGRect row1Rect1;
+    CGRect row1Rect2;
+    CGRect row1Rect3;
+    
+    CGRect row2Rect1;
+    CGRect row2Rect2;
+    CGRect row2Rect3;
+    
+    CGRect row3Rect1;
+    CGRect row3Rect2;
+    CGRect row3Rect3;
+}
 @end
 
 @implementation GameBoardView
 
-
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    if (self = [super initWithCoder:coder]) {
+        row1Rect1 = CGRectMake(24.0, 28.0, 70, 70);
+        row1Rect2 = CGRectMake(136.0, 28.0, 70, 70);
+        row1Rect3 = CGRectMake(246.0, 28.0, 70, 70);
+        
+        row2Rect1 = CGRectMake(24.0, 134.0, 70, 70);
+        row2Rect2 = CGRectMake(136.0, 134.0, 70, 70);
+        row2Rect3 = CGRectMake(246.0, 134.0, 70, 70);
+        
+        row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
+        row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
+        row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
+    }
+    return self;
+}
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderBoarder {
@@ -55,18 +82,6 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderMarks {
-    CGRect row1Rect1 = CGRectMake(24.0, 28.0, 70, 70);
-    CGRect row1Rect2 = CGRectMake(136.0, 28.0, 70, 70);
-    CGRect row1Rect3 = CGRectMake(246.0, 28.0, 70, 70);
-    
-    CGRect row2Rect1 = CGRectMake(24.0, 134.0, 70, 70);
-    CGRect row2Rect2 = CGRectMake(136.0, 134.0, 70, 70);
-    CGRect row2Rect3 = CGRectMake(246.0, 134.0, 70, 70);
-    
-    CGRect row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
-    CGRect row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
-    CGRect row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
-    
     [self renderXinRect:row3Rect3];
 }
 
