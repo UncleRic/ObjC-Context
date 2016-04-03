@@ -26,6 +26,8 @@
     [GameContext fillRect:[self.layout innerBorderRect] withColor:[UIColor greenColor]];
 }
 
+// -----------------------------------------------------------------------------------------------------------------
+
 - (void)renderGridLines {
     CGPoint from; CGPoint to;
     NSArray *gridLines = [self.layout gridLines];
@@ -53,7 +55,19 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderMarks {
+    CGRect row1Rect1 = CGRectMake(24.0, 28.0, 70, 70);
+    CGRect row1Rect2 = CGRectMake(136.0, 28.0, 70, 70);
+    CGRect row1Rect3 = CGRectMake(246.0, 28.0, 70, 70);
     
+    CGRect row2Rect1 = CGRectMake(24.0, 134.0, 70, 70);
+    CGRect row2Rect2 = CGRectMake(136.0, 134.0, 70, 70);
+    CGRect row2Rect3 = CGRectMake(246.0, 134.0, 70, 70);
+    
+    CGRect row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
+    CGRect row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
+    CGRect row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
+    
+    [self renderXinRect:row3Rect3];
 }
 
 // -----------------------------------------------------------------------------------------------------------------

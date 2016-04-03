@@ -54,7 +54,7 @@ CGFloat const kWinningLineInset = 8.0;
 }
 
 + (UIColor *)markXColor {
-    return [UIColor greenColor];
+    return [UIColor darkGrayColor];
 }
 
 + (UIColor *)outerBorderColor {
