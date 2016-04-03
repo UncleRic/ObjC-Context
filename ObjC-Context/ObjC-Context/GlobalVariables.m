@@ -102,16 +102,11 @@ CGFloat const kWinningLineInset = 8.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, color.CGColor);
     CGContextSetLineWidth(context, width);
+    CGContextAddEllipseInRect(context, rect);
     CGContextStrokePath(context);
 }
 
-
 @end
 
-// ===========================================================================================================
-
-@implementation GlobalVariables
-
-@end
 
 
