@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "GameBoardView.h"
-
+#import "GlobalVariables.h"
 
 @interface GameBoardView()
 @end
@@ -27,8 +27,14 @@
 
 - (void)renderGridLines {
     CGPoint from; CGPoint to;
-    NSArray *myArray = [self.layout gridLines];
-    [GameContext strokeLineFrom:from to:to withColor:[UIColor gridLineColor] havingWidth:kGridLine andLineCap:kCGLineCapButt];
+    NSArray *gridLines = [self.layout gridLines];
+    LineStruct lineStruct;
+    for (NSValue *line in gridLines) {
+        [line getValue:&lineStruct];
+        from = lineStruct.startPoint;
+        to = lineStruct.endPoint;
+        [GameContext strokeLineFrom:from to:to withColor:[UIColor gridLineColor] havingWidth:kGridLine andLineCap:kCGLineCapButt];
+    }
 }
 
 

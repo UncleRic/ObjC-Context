@@ -17,6 +17,12 @@ extern CGFloat const kPlatformMargin;
 extern CGFloat const kWinningLine;
 extern CGFloat const kWinningLineInset;
 
+typedef struct {
+    CGPoint startPoint;
+    CGPoint endPoint;
+} LineStruct;
+
+
 // ===========================================================================================================
 
 typedef id (^arrayObject)(id obj, NSUInteger idx);

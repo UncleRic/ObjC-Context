@@ -8,12 +8,6 @@
 #import "GameBoardLayout.h"
 #import "GlobalVariables.h"
 
-typedef struct {
-    CGPoint startPoint;
-    CGPoint endPoint;
-} LineStruct;
-
-
 @interface GameBoardLayout()
 @property(assign) CGRect frame;
 @property(assign) NSUInteger marksPerAxis;
@@ -31,7 +25,7 @@ typedef struct {
 #pragma mark - Gridlines
 
 - (NSArray *)gridLines {
-    LineStruct line;
+    LineStruct verticalLine, horizontalLine;
     
     CGFloat cellLength = self.platformRect.size.width/self.marksPerAxis;
     
@@ -39,18 +33,18 @@ typedef struct {
     NSMutableArray *horizontalLines = [NSMutableArray arrayWithCapacity:_marksPerAxis];
     
     for (CGFloat lineNumber = 1; lineNumber < 3; lineNumber++) {
-        CGFloat x = (CGRectGetMinX(self.platformRect) + lineNumber) * cellLength;
-        line.startPoint = CGPointMake(x,CGRectGetMinY(self.platformRect));
-        line.endPoint = CGPointMake(x,CGRectGetMaxY(self.platformRect));
-        NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+        CGFloat x = CGRectGetMinX(self.platformRect) + lineNumber * cellLength;
+        verticalLine.startPoint = CGPointMake(x,CGRectGetMinY(self.platformRect));
+        verticalLine.endPoint = CGPointMake(x,CGRectGetMaxY(self.platformRect));
+        NSValue *structValue = [NSValue value:&verticalLine withObjCType:@encode(LineStruct)];
         [verticalLines addObject:structValue];
     }
     
     for (CGFloat lineNumber = 1; lineNumber < 3; lineNumber++) {
-        CGFloat y = (CGRectGetMinY(self.platformRect) + lineNumber) * cellLength;
-        line.startPoint = CGPointMake(y,CGRectGetMinX(self.platformRect));
-        line.endPoint = CGPointMake(y,CGRectGetMaxX(self.platformRect));
-        NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+        CGFloat y = CGRectGetMinY(self.platformRect) + lineNumber * cellLength;
+        horizontalLine.startPoint = CGPointMake(CGRectGetMinX(self.platformRect),y);
+        horizontalLine.endPoint = CGPointMake(CGRectGetMaxX(self.platformRect),y);
+        NSValue *structValue = [NSValue value:&horizontalLine withObjCType:@encode(LineStruct)];
         [horizontalLines addObject:structValue];
     }
     
