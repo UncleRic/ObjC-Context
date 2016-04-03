@@ -1,11 +1,11 @@
-//  GlobalVariables.m
+//  Global.m
 //  ObjC-Context
 //
 //  Created by Frederick C. Lee on 3/29/16.
 //  Copyright © 2016 Amourine Technologies. All rights reserved.
 // -----------------------------------------------------------------------------------------------------------------
 
-#import "GlobalVariables.h"
+#import "Global.h"
 
 CGFloat const kGridLine = 4.0;
 CGFloat const kOuterBorder = 4.0;

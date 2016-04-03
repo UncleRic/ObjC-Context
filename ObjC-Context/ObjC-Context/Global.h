@@ -1,4 +1,4 @@
-//  GlobalVariables.h
+//  Global.h
 //  ObjC-Context
 //
 //  Created by Frederick C. Lee on 3/29/16.
@@ -45,9 +45,3 @@ typedef struct {
 + (void)strokeLineFrom:(CGPoint)from to:(CGPoint)to withColor:(UIColor *)color havingWidth:(CGFloat)width andLineCap:(CGLineCap)lineCap;
 @end
 
-
-// ===========================================================================================================
-
-@interface GlobalVariables : NSObject
-
-@end

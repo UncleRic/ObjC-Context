@@ -15,7 +15,7 @@
 		18AFE0151CAB097C00DBB87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AFE0141CAB097C00DBB87D /* Assets.xcassets */; };
 		18AFE0181CAB097C00DBB87D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AFE0161CAB097C00DBB87D /* LaunchScreen.storyboard */; };
 		18AFE0231CAB0D8300DBB87D /* GameBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE0221CAB0D8300DBB87D /* GameBoardView.m */; };
-		18AFE0301CAB314000DBB87D /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE02F1CAB314000DBB87D /* GlobalVariables.m */; };
+		18AFE0301CAB314000DBB87D /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AFE02F1CAB314000DBB87D /* Global.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 		18AFE0191CAB097C00DBB87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18AFE0211CAB0D8300DBB87D /* GameBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameBoardView.h; path = "ObjC-Context/GameBoardView.h"; sourceTree = "<group>"; };
 		18AFE0221CAB0D8300DBB87D /* GameBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardView.m; path = "ObjC-Context/GameBoardView.m"; sourceTree = "<group>"; };
-		18AFE02E1CAB314000DBB87D /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlobalVariables.h; path = "ObjC-Context/GlobalVariables.h"; sourceTree = "<group>"; };
-		18AFE02F1CAB314000DBB87D /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GlobalVariables.m; path = "ObjC-Context/GlobalVariables.m"; sourceTree = "<group>"; };
+		18AFE02E1CAB314000DBB87D /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = "ObjC-Context/Global.h"; sourceTree = "<group>"; };
+		18AFE02F1CAB314000DBB87D /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Global.m; path = "ObjC-Context/Global.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +51,8 @@
 		1880DFE51CAC859100AC3D12 /* Global Variables */ = {
 			isa = PBXGroup;
 			children = (
-				18AFE02E1CAB314000DBB87D /* GlobalVariables.h */,
-				18AFE02F1CAB314000DBB87D /* GlobalVariables.m */,
+				18AFE02E1CAB314000DBB87D /* Global.h */,
+				18AFE02F1CAB314000DBB87D /* Global.m */,
 			);
 			name = "Global Variables";
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 				18AFE00D1CAB097C00DBB87D /* AppDelegate.m in Sources */,
 				1880DFE91CAC86C200AC3D12 /* GameBoardLayout.m in Sources */,
 				18AFE00A1CAB097C00DBB87D /* main.m in Sources */,
-				18AFE0301CAB314000DBB87D /* GlobalVariables.m in Sources */,
+				18AFE0301CAB314000DBB87D /* Global.m in Sources */,
 				18AFE0231CAB0D8300DBB87D /* GameBoardView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +276,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ObjC-Context/GlobalVariables.h";
+				GCC_PREFIX_HEADER = "ObjC-Context/Global.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",

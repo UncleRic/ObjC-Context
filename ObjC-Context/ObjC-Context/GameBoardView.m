@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "GameBoardView.h"
-#import "GlobalVariables.h"
+#import "Global.h"
 #import "GameBoardLayout.h"
 
 @interface GameBoardView() {

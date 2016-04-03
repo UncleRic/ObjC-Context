@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "GameBoardLayout.h"
-#import "GlobalVariables.h"
+#import "Global.h"
 
 @interface GameBoardLayout()
 @property(assign) CGRect frame;

@@ -24,5 +24,4 @@
 + (CGPoint)topCenterOfRect:(CGRect)myRect;
 + (CGPoint)topLeftOfRect:(CGRect)myRect;
 + (CGPoint)topRightOfRect:(CGRect)myRect;
-+ (CGRect)insetRect:(CGRect)myRect byAmount:(CGFloat)amount;
 @end
