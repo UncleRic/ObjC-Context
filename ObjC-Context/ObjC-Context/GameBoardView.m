@@ -7,6 +7,7 @@
 
 #import "GameBoardView.h"
 #import "GlobalVariables.h"
+#import "GameBoardLayout.h"
 
 @interface GameBoardView()
 @end
@@ -37,9 +38,25 @@
     }
 }
 
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)renderXinRect:(CGRect)rect {
+    
+    
+    [GameContext strokeLineFrom:[GameBoardLayout topLeftOfRect:rect] to:[GameBoardLayout bottomRightOfRect:rect]
+                      withColor: [UIColor markXColor] havingWidth:kMark andLineCap:kCGLineCapRound];
+    
+    [GameContext strokeLineFrom:[GameBoardLayout bottomLeftOfRect:rect] to:[GameBoardLayout topRightOfRect:rect]
+                      withColor: [UIColor markXColor] havingWidth:kMark andLineCap:kCGLineCapRound];
+}
 
 // -----------------------------------------------------------------------------------------------------------------
 
+- (void)renderMarks {
+    
+}
+
+// -----------------------------------------------------------------------------------------------------------------
 
 - (void)drawRect:(CGRect)rect {
     if (nil != self.layout) {
@@ -48,6 +65,7 @@
         [self renderBoarder];
         [self renderPlatform];
         [self renderGridLines];
+        [self renderMarks];
     }
     
 }

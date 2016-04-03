@@ -15,5 +15,14 @@
 - (CGRect)platformRect;
 - (NSArray *)gridLines;
 
-
++ (CGPoint)bottomCenterOfRect:(CGRect)myRect;
++ (CGPoint)bottomLeftOfRect:(CGRect)myRect;
++ (CGPoint)bottomRightOfRect:(CGRect)myRect;
++ (CGPoint)centerRectOfRect:(CGRect)myRect;
++ (CGPoint)centerLeftOfRect:(CGRect)myRect;
++ (CGPoint)centerRightLeftOfRect:(CGRect)myRect;
++ (CGPoint)topCenterOfRect:(CGRect)myRect;
++ (CGPoint)topLeftOfRect:(CGRect)myRect;
++ (CGPoint)topRightOfRect:(CGRect)myRect;
++ (CGRect)insetRect:(CGRect)myRect byAmount:(CGFloat)amount;
 @end

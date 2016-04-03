@@ -54,7 +54,6 @@
  
 }
 
-
 // -----------------------------------------------------------------------------------------------------------------
 #pragma mark - Rect methods
 
@@ -72,41 +71,41 @@
 }
 
 // -----------------------------------------------------------------------------------------------------------------
-#pragma mark -
+#pragma mark - Rect Coordinates
 
-- (CGPoint)bottomCenterOfRect:(CGRect)myRect{
++ (CGPoint)bottomCenterOfRect:(CGRect)myRect{
     return CGPointMake(CGRectGetMidX(myRect), CGRectGetMaxY(myRect));
 }
 
-- (CGPoint)bottomLeftOfRect:(CGRect)myRect {
++ (CGPoint)bottomLeftOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMinX(myRect), CGRectGetMaxY(myRect));
 }
 
-- (CGPoint)bottomRightOfRect:(CGRect)myRect {
++ (CGPoint)bottomRightOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMaxX(myRect), CGRectGetMaxY(myRect));
 }
 
-- (CGPoint)centerRectOfRect:(CGRect)myRect {
++ (CGPoint)centerRectOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMidX(myRect), CGRectGetMidY(myRect));
 }
 
-- (CGPoint)centerLeftOfRect:(CGRect)myRect {
++ (CGPoint)centerLeftOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMinX(myRect), CGRectGetMidY(myRect));
 }
 
-- (CGPoint)centerRightLeftOfRect:(CGRect)myRect {
++ (CGPoint)centerRightLeftOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMaxX(myRect), CGRectGetMidY(myRect));
 }
 
-- (CGPoint)topCenterOfRect:(CGRect)myRect {
++ (CGPoint)topCenterOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMidX(myRect), CGRectGetMinY(myRect));
 }
 
-- (CGPoint)topLeftOfRect:(CGRect)myRect {
++ (CGPoint)topLeftOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMinX(myRect), CGRectGetMinY(myRect));
 }
 
-- (CGPoint)topRightOfRect:(CGRect)myRect {
++ (CGPoint)topRightOfRect:(CGRect)myRect {
     return CGPointMake(CGRectGetMaxX(myRect), CGRectGetMinY(myRect));
 }
 

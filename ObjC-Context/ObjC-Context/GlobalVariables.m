@@ -16,16 +16,6 @@ CGFloat const kPlatformMargin = 16.0;
 CGFloat const kWinningLine = 8.0;
 CGFloat const kWinningLineInset = 8.0;
 
-@implementation NSArray(Map)
-- (NSArray *)mapObjectsUsingBlock:(arrayObject)block {
-    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [result addObject:block(obj, idx)];
-    }];
-    return result;
-}
-@end
-
 // ===========================================================================================================
 
 @implementation UIColor (ColorCategory)
