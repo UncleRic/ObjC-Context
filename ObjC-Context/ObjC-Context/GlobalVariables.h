@@ -19,6 +19,14 @@ extern CGFloat const kWinningLineInset;
 
 // ===========================================================================================================
 
+typedef id (^arrayObject)(id obj, NSUInteger idx);
+
+@interface NSArray(Map)
+- (NSArray *)mapObjectsUsingBlock:(arrayObject)block;
+@end
+
+// ===========================================================================================================
+
 @interface UIColor (ColorCategory)
 + (UIColor *)colorWithHexString:(NSString *)colorString;
 + (UIColor *)gridLineColor;

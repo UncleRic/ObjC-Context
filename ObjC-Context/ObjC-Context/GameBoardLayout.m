@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 #import "GameBoardLayout.h"
-
+#import "GlobalVariables.h"
 
 typedef struct {
     CGPoint startPoint;
@@ -33,20 +33,30 @@ typedef struct {
 - (void)gridLines {
     LineStruct line;
     
-//    CGFloat cellLength = self.platformRect.size.width/self.marksPerAxis;
-//    NSMutableArray *lineNumbers = [NSMutableArray arrayWithCapacity:_marksPerAxis];
-//    
-//    
-//    line.startPoint = CGPointMake(2,3);
-//    line.endPoint = CGPointMake(5,6);
-//    
-//
-//    NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
-//    NSArray *lineArray = [NSArray arrayWithObject:structValue];
+    CGFloat cellLength = self.platformRect.size.width/self.marksPerAxis;
     
-//    let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
-//    CGFloat x = self.platformRect.minX + CGFloat(lineNumbers) * cellLength
+    NSMutableArray *lineNumbers = [NSMutableArray arrayWithCapacity:_marksPerAxis];
     
+    
+    line.startPoint = CGPointMake(2,3);
+    line.endPoint = CGPointMake(5,6);
+    
+    NSArray *names = [lineNumbers mapObjectsUsingBlock:^(id obj, NSUInteger idx) {
+        return obj[@"name"];
+    }];
+
+    NSValue *structValue = [NSValue value:&line withObjCType:@encode(LineStruct)];
+    NSArray *lineArray = [NSArray arrayWithObject:structValue];
+    
+ //   let x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
+ //   CGFloat x = self.platformRect.minX + CGFloat(lineNumber) * cellLength
+    
+    CGRectGetMinX(self.platformRect);
+    
+    
+//startPoint: CGPoint(x: x, y: self.platformRect.minY),
+//endPoint:   CGPoint(x: x, y: self.platformRect.maxY))
+
     
 }
 
