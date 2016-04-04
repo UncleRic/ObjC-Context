@@ -22,6 +22,9 @@
     CGRect row3Rect2;
     CGRect row3Rect3;
 }
+
+@property(nonatomic, retain) NSArray *rectArray;
+
 @end
 
 @implementation GameBoardView
@@ -39,6 +42,20 @@
         row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
         row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
         row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
+        
+        self.rectArray = @[
+                           [NSValue valueWithCGRect:row1Rect1],
+                           [NSValue valueWithCGRect:row1Rect2],
+                           [NSValue valueWithCGRect:row1Rect3],
+                           
+                           [NSValue valueWithCGRect:row2Rect1],
+                           [NSValue valueWithCGRect:row2Rect2],
+                           [NSValue valueWithCGRect:row2Rect3],
+                           
+                           [NSValue valueWithCGRect:row3Rect1],
+                           [NSValue valueWithCGRect:row3Rect2],
+                           [NSValue valueWithCGRect:row3Rect3]
+                           ];
     }
     return self;
 }
@@ -56,16 +73,39 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderGridLines {
-    CGPoint from; CGPoint to;
+    CGPoint startPoint; CGPoint endPoint;
     NSArray *gridLines = [self.layout gridLines];
     LineStruct lineStruct;
     for (NSValue *line in gridLines) {
         [line getValue:&lineStruct];
-        from = lineStruct.startPoint;
-        to = lineStruct.endPoint;
-        [GameContext strokeLineFrom:from to:to withColor:[UIColor gridLineColor] havingWidth:kGridLine andLineCap:kCGLineCapButt];
+        startPoint = lineStruct.startPoint;
+        endPoint = lineStruct.endPoint;
+        [GameContext strokeLineFrom:startPoint to:endPoint withColor:[UIColor gridLineColor] havingWidth:kGridLine andLineCap:kCGLineCapButt];
     }
 }
+
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)renderLineThroughWinningPositions {
+    CGPoint startPoint1 = CGPointMake(14, 64);
+    CGPoint endPoint1 = CGPointMake(328,64);
+    
+    CGPoint startPoint2 = CGPointMake(14, 170);
+    CGPoint endPoint2 = CGPointMake(328,170);
+    
+    CGPoint startPoint3 = CGPointMake(14, 280);
+    CGPoint endPoint3 = CGPointMake(328,280);
+    
+    CGPoint startXPoint1 = CGPointMake(20, 20);
+    CGPoint endXPoint1 = CGPointMake(326,326);
+    
+    CGPoint startXPoint2 = CGPointMake(326, 20);
+    CGPoint endXPoint2 = CGPointMake(20,326);
+
+    [GameContext strokeLineFrom:startXPoint2 to:endXPoint2 withColor:[UIColor winningLineColor] havingWidth:kWinningLine andLineCap:kCGLineCapRound];
+    
+}
+
 
 // -----------------------------------------------------------------------------------------------------------------
 
@@ -102,6 +142,7 @@
         [self renderPlatform];
         [self renderGridLines];
         [self renderMarks];
+        [self renderLineThroughWinningPositions];
     }
     
 }
