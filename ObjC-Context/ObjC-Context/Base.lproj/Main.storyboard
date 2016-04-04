@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -22,6 +23,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBK-uV-iga">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
+                                    <barButtonItem title="Random Play" id="lxN-LL-pel">
+                                        <connections>
+                                            <action selector="randomPlayAction:" destination="BYZ-38-t0r" id="vFT-o1-pS3"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eMn-1L-EnI"/>
                                     <barButtonItem title="Exit" id="Y2d-u6-1rP">
                                         <connections>
@@ -83,14 +89,14 @@
                                 <exclude reference="wZh-bo-Xcc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="XZ1-UF-WUJ"/>
-                                <exclude reference="ewL-e9-jaz"/>
+                                <exclude reference="bS1-tC-gWm"/>
                                 <exclude reference="Id2-VB-ide"/>
                                 <exclude reference="P9K-dS-3dp"/>
                                 <exclude reference="aQ3-Tf-3TE"/>
                                 <exclude reference="0pL-aJ-Lm7"/>
                                 <exclude reference="ZCr-vG-KHq"/>
-                                <exclude reference="bS1-tC-gWm"/>
+                                <exclude reference="XZ1-UF-WUJ"/>
+                                <exclude reference="ewL-e9-jaz"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -100,14 +106,14 @@
                                 <include reference="wZh-bo-Xcc"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="XZ1-UF-WUJ"/>
-                                <include reference="ewL-e9-jaz"/>
+                                <include reference="bS1-tC-gWm"/>
                                 <include reference="Id2-VB-ide"/>
                                 <include reference="P9K-dS-3dp"/>
                                 <include reference="aQ3-Tf-3TE"/>
                                 <include reference="0pL-aJ-Lm7"/>
                                 <include reference="ZCr-vG-KHq"/>
-                                <include reference="bS1-tC-gWm"/>
+                                <include reference="XZ1-UF-WUJ"/>
+                                <include reference="ewL-e9-jaz"/>
                             </mask>
                         </variation>
                     </view>
