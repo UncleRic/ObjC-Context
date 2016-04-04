@@ -10,6 +10,7 @@
 #import "GameboardLayout.h"
 
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet GameBoardView *gameBoardView;
 @end
 
@@ -33,6 +34,11 @@
 - (IBAction)randomPlayAction:(UIBarButtonItem *)sender {
     self.gameBoardView.isPlaying = true;
     [_gameBoardView setNeedsDisplay];
+}
+
+- (IBAction)clearAction:(UIBarButtonItem *)sender {
+    
+    return;
 }
 
 // -----------------------------------------------------------------------------------------------------------------

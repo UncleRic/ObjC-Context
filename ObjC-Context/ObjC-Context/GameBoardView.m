@@ -18,6 +18,19 @@ typedef NS_ENUM(NSUInteger, WinningStreakEnum) {
     diagnalTwo
 };
 
+typedef NS_ENUM(NSUInteger, GameBoardSquare) {
+    one = 0,
+    two,
+    three,
+    four,
+    five,
+    six,
+    seven,
+    eight,
+    nine
+};
+
+
 @interface GameBoardView()
 @property(nonatomic, retain) NSArray *rectArray;
 @property(nonatomic, retain) NSArray *winningStreakArray;
@@ -120,11 +133,9 @@ typedef NS_ENUM(NSUInteger, WinningStreakEnum) {
 
 // -----------------------------------------------------------------------------------------------------------------
 
-- (void)renderLineThroughWinningPositions {
+- (void)renderLineThroughWinningPositions:(WinningStreakEnum)myEnum {
     
     LineStruct lineStruct;
-    
-    WinningStreakEnum myEnum = diagnalOne;
     
     NSValue *myValue = _winningStreakArray[myEnum];
     [myValue getValue:&lineStruct];
@@ -158,19 +169,20 @@ typedef NS_ENUM(NSUInteger, WinningStreakEnum) {
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderMarks {
-//    [self renderXinRect:row1Rect1];
-//    [self renderXinRect:row1Rect2];
-//    [self renderXinRect:row1Rect3];
-//    
-//    [self renderXinRect:row2Rect1];
-//    [self renderXinRect:row2Rect2];
-//    [self renderXinRect:row2Rect3];
-//    
-//    [self renderXinRect:row3Rect1];
-//    [self renderXinRect:row3Rect2];
-//    [self renderXinRect:row3Rect3];
+    GameBoardSquare rectItem = one;
+    [self renderXinRect:[_rectArray[rectItem] CGRectValue]];
     
-    //   [self renderOinRect:row2Rect2];
+    rectItem = two;
+    [self renderOinRect:[_rectArray[rectItem] CGRectValue]];
+    
+    rectItem = five;
+    [self renderXinRect:[_rectArray[rectItem] CGRectValue]];
+    
+    rectItem = four;
+    [self renderOinRect:[_rectArray[rectItem] CGRectValue]];
+    
+    rectItem = nine;
+    [self renderXinRect:[_rectArray[rectItem] CGRectValue]];
 }
 
 // -----------------------------------------------------------------------------------------------------------------
@@ -184,10 +196,9 @@ typedef NS_ENUM(NSUInteger, WinningStreakEnum) {
         [self renderGridLines];
         if (_isPlaying) {
             [self renderMarks];
+            [self renderLineThroughWinningPositions:diagnalOne];
         }
-        [self renderLineThroughWinningPositions];
     }
-    
 }
 
 

@@ -28,7 +28,12 @@
                                             <action selector="randomPlayAction:" destination="BYZ-38-t0r" id="vFT-o1-pS3"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="eMn-1L-EnI"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="29F-lv-4nL"/>
+                                    <barButtonItem enabled="NO" title="Clear" id="ttk-Et-O0w">
+                                        <connections>
+                                            <action selector="clearAction:" destination="BYZ-38-t0r" id="Q6V-Qg-UlP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Exit" id="Y2d-u6-1rP">
                                         <connections>
                                             <action selector="exitAction:" destination="BYZ-38-t0r" id="9Sx-ma-ovj"/>
@@ -118,6 +123,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="clearButton" destination="ttk-Et-O0w" id="Ryf-CB-ytx"/>
                         <outlet property="gameBoardView" destination="peb-MP-YXN" id="O4S-KD-k2H"/>
                     </connections>
                 </viewController>
