@@ -31,7 +31,8 @@
 #pragma mark - Action methods
 
 - (IBAction)randomPlayAction:(UIBarButtonItem *)sender {
-    
+    self.gameBoardView.isPlaying = true;
+    [_gameBoardView setNeedsDisplay];
 }
 
 // -----------------------------------------------------------------------------------------------------------------

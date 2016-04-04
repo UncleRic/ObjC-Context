@@ -10,4 +10,5 @@
 
 @interface GameBoardView : UIView
 @property (nonatomic,retain)GameBoardLayout *layout;
+@property bool isPlaying;
 @end

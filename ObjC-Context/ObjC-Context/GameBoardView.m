@@ -9,21 +9,18 @@
 #import "Global.h"
 #import "GameBoardLayout.h"
 
-@interface GameBoardView() {
-    CGRect row1Rect1;
-    CGRect row1Rect2;
-    CGRect row1Rect3;
-    
-    CGRect row2Rect1;
-    CGRect row2Rect2;
-    CGRect row2Rect3;
-    
-    CGRect row3Rect1;
-    CGRect row3Rect2;
-    CGRect row3Rect3;
-}
 
+typedef NS_ENUM(NSUInteger, WinningStreakEnum) {
+    oneAcross = 0,
+    twoAcross,
+    threeAcross,
+    diagnalOne,
+    diagnalTwo
+};
+
+@interface GameBoardView()
 @property(nonatomic, retain) NSArray *rectArray;
+@property(nonatomic, retain) NSArray *winningStreakArray;
 
 @end
 
@@ -31,34 +28,71 @@
 
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super initWithCoder:coder]) {
-        row1Rect1 = CGRectMake(24.0, 28.0, 70, 70);
-        row1Rect2 = CGRectMake(136.0, 28.0, 70, 70);
-        row1Rect3 = CGRectMake(246.0, 28.0, 70, 70);
-        
-        row2Rect1 = CGRectMake(24.0, 134.0, 70, 70);
-        row2Rect2 = CGRectMake(136.0, 134.0, 70, 70);
-        row2Rect3 = CGRectMake(246.0, 134.0, 70, 70);
-        
-        row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
-        row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
-        row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
-        
-        self.rectArray = @[
-                           [NSValue valueWithCGRect:row1Rect1],
-                           [NSValue valueWithCGRect:row1Rect2],
-                           [NSValue valueWithCGRect:row1Rect3],
-                           
-                           [NSValue valueWithCGRect:row2Rect1],
-                           [NSValue valueWithCGRect:row2Rect2],
-                           [NSValue valueWithCGRect:row2Rect3],
-                           
-                           [NSValue valueWithCGRect:row3Rect1],
-                           [NSValue valueWithCGRect:row3Rect2],
-                           [NSValue valueWithCGRect:row3Rect3]
-                           ];
+        self.isPlaying = false;
+        [self constructWinningStreakCoordinates];
+        [self constructGameBoardRects];
     }
     return self;
 }
+
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)constructGameBoardRects {
+    CGRect row1Rect1 = CGRectMake(24.0, 28.0, 70, 70);
+    CGRect row1Rect2 = CGRectMake(136.0, 28.0, 70, 70);
+    CGRect row1Rect3 = CGRectMake(246.0, 28.0, 70, 70);
+    
+    CGRect row2Rect1 = CGRectMake(24.0, 134.0, 70, 70);
+    CGRect row2Rect2 = CGRectMake(136.0, 134.0, 70, 70);
+    CGRect row2Rect3 = CGRectMake(246.0, 134.0, 70, 70);
+    
+    CGRect row3Rect1 = CGRectMake(24.0, 244.0, 70, 70);
+    CGRect row3Rect2 = CGRectMake(136.0, 244.0, 70, 70);
+    CGRect row3Rect3 = CGRectMake(246.0, 244.0, 70, 70);
+    
+    self.rectArray = @[
+                       [NSValue valueWithCGRect:row1Rect1],
+                       [NSValue valueWithCGRect:row1Rect2],
+                       [NSValue valueWithCGRect:row1Rect3],
+                       
+                       [NSValue valueWithCGRect:row2Rect1],
+                       [NSValue valueWithCGRect:row2Rect2],
+                       [NSValue valueWithCGRect:row2Rect3],
+                       
+                       [NSValue valueWithCGRect:row3Rect1],
+                       [NSValue valueWithCGRect:row3Rect2],
+                       [NSValue valueWithCGRect:row3Rect3]
+                       ];
+    
+}
+
+// -----------------------------------------------------------------------------------------------------------------
+
+- (void)constructWinningStreakCoordinates {
+    LineStruct lineStruct1, lineStruct2, lineStruct3, lineStructX4, lineStructX5;
+    lineStruct1.startPoint = CGPointMake(14, 64);
+    lineStruct1.endPoint = CGPointMake(328,64);
+    NSValue *structValue1 = [NSValue value:&lineStruct1 withObjCType:@encode(LineStruct)];
+    
+    lineStruct2.startPoint = CGPointMake(14, 170);
+    lineStruct2.endPoint = CGPointMake(328,170);
+    NSValue *structValue2 = [NSValue value:&lineStruct2 withObjCType:@encode(LineStruct)];
+    
+    lineStruct3.startPoint = CGPointMake(14, 280);
+    lineStruct3.endPoint = CGPointMake(328,280);
+    NSValue *structValue3 = [NSValue value:&lineStruct3 withObjCType:@encode(LineStruct)];
+    
+    lineStructX4.startPoint = CGPointMake(20, 20);
+    lineStructX4.endPoint = CGPointMake(326,326);
+    NSValue *structValueX4 = [NSValue value:&lineStructX4 withObjCType:@encode(LineStruct)];
+    
+    lineStructX5.startPoint = CGPointMake(326, 20);
+    lineStructX5.endPoint = CGPointMake(20,326);
+    NSValue *structValueX5 = [NSValue value:&lineStructX5 withObjCType:@encode(LineStruct)];
+    
+    self.winningStreakArray = @[structValue1, structValue2, structValue3, structValueX4, structValueX5];
+}
+
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderBoarder {
@@ -87,22 +121,18 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderLineThroughWinningPositions {
-    CGPoint startPoint1 = CGPointMake(14, 64);
-    CGPoint endPoint1 = CGPointMake(328,64);
     
-    CGPoint startPoint2 = CGPointMake(14, 170);
-    CGPoint endPoint2 = CGPointMake(328,170);
+    LineStruct lineStruct;
     
-    CGPoint startPoint3 = CGPointMake(14, 280);
-    CGPoint endPoint3 = CGPointMake(328,280);
+    WinningStreakEnum myEnum = diagnalOne;
     
-    CGPoint startXPoint1 = CGPointMake(20, 20);
-    CGPoint endXPoint1 = CGPointMake(326,326);
+    NSValue *myValue = _winningStreakArray[myEnum];
+    [myValue getValue:&lineStruct];
     
-    CGPoint startXPoint2 = CGPointMake(326, 20);
-    CGPoint endXPoint2 = CGPointMake(20,326);
-
-    [GameContext strokeLineFrom:startXPoint2 to:endXPoint2 withColor:[UIColor winningLineColor] havingWidth:kWinningLine andLineCap:kCGLineCapRound];
+    [GameContext strokeLineFrom:lineStruct.startPoint
+                             to:lineStruct.endPoint
+                      withColor:[UIColor winningLineColor]
+                    havingWidth:kWinningLine andLineCap:kCGLineCapRound];
     
 }
 
@@ -128,8 +158,19 @@
 // -----------------------------------------------------------------------------------------------------------------
 
 - (void)renderMarks {
-    [self renderXinRect:row3Rect3];
-    [self renderOinRect:row2Rect2];
+//    [self renderXinRect:row1Rect1];
+//    [self renderXinRect:row1Rect2];
+//    [self renderXinRect:row1Rect3];
+//    
+//    [self renderXinRect:row2Rect1];
+//    [self renderXinRect:row2Rect2];
+//    [self renderXinRect:row2Rect3];
+//    
+//    [self renderXinRect:row3Rect1];
+//    [self renderXinRect:row3Rect2];
+//    [self renderXinRect:row3Rect3];
+    
+    //   [self renderOinRect:row2Rect2];
 }
 
 // -----------------------------------------------------------------------------------------------------------------
@@ -141,7 +182,9 @@
         [self renderBoarder];
         [self renderPlatform];
         [self renderGridLines];
-        [self renderMarks];
+        if (_isPlaying) {
+            [self renderMarks];
+        }
         [self renderLineThroughWinningPositions];
     }
     
