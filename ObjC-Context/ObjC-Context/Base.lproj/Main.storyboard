@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11185.3" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -17,11 +18,40 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Tic-Tac-Toe " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZh-bo-Xcc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ZaS-Fm-DnM"/>
+                                    <constraint firstAttribute="height" constant="19" id="cyi-S8-OVy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                <color key="textColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peb-MP-YXN" userLabel="GameBoardView" customClass="GameBoardView">
+                                <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="m4j-Sq-qds">
+                                        <variation key="widthClass=compact" constant="300"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="peb-MP-YXN" secondAttribute="height" multiplier="1:1" id="tfY-SD-UTp"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="m4j-Sq-qds"/>
+                                        <exclude reference="tfY-SD-UTp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="m4j-Sq-qds"/>
+                                        <include reference="tfY-SD-UTp"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBK-uV-iga">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Random Play" id="lxN-LL-pel">
                                         <connections>
@@ -41,84 +71,48 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peb-MP-YXN" userLabel="GameBoardView" customClass="GameBoardView">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="360" id="m4j-Sq-qds">
-                                        <variation key="widthClass=compact" constant="342"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" secondItem="peb-MP-YXN" secondAttribute="height" multiplier="1:1" id="tfY-SD-UTp"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="m4j-Sq-qds"/>
-                                        <exclude reference="tfY-SD-UTp"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="m4j-Sq-qds"/>
-                                        <include reference="tfY-SD-UTp"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's ObjC Context" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZh-bo-Xcc">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.80124371360000002" green="1" blue="0.97811359539999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.80124371360000002" green="1" blue="0.97811359539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XBK-uV-iga" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="0pL-aJ-Lm7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wZh-bo-Xcc" secondAttribute="trailing" constant="107" id="Id2-VB-ide">
-                                <variation key="widthClass=compact" constant="100"/>
-                            </constraint>
+                            <constraint firstItem="peb-MP-YXN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ey-mz-fKE"/>
                             <constraint firstItem="wZh-bo-Xcc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="P9K-dS-3dp">
                                 <variation key="widthClass=compact" constant="14"/>
                             </constraint>
                             <constraint firstItem="peb-MP-YXN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="XZ1-UF-WUJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XBK-uV-iga" secondAttribute="trailing" constant="-20" id="ZCr-vG-KHq"/>
-                            <constraint firstItem="wZh-bo-Xcc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="109" id="aQ3-Tf-3TE">
-                                <variation key="widthClass=compact" constant="100"/>
-                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XBK-uV-iga" secondAttribute="bottom" id="bS1-tC-gWm"/>
                             <constraint firstAttribute="leadingMargin" secondItem="peb-MP-YXN" secondAttribute="leading" priority="750" id="ewL-e9-jaz"/>
+                            <constraint firstItem="wZh-bo-Xcc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="iDt-mk-NYi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="XBK-uV-iga"/>
-                                <exclude reference="peb-MP-YXN"/>
                                 <exclude reference="wZh-bo-Xcc"/>
+                                <exclude reference="peb-MP-YXN"/>
+                                <exclude reference="XBK-uV-iga"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bS1-tC-gWm"/>
-                                <exclude reference="Id2-VB-ide"/>
-                                <exclude reference="P9K-dS-3dp"/>
-                                <exclude reference="aQ3-Tf-3TE"/>
-                                <exclude reference="0pL-aJ-Lm7"/>
-                                <exclude reference="ZCr-vG-KHq"/>
                                 <exclude reference="XZ1-UF-WUJ"/>
                                 <exclude reference="ewL-e9-jaz"/>
+                                <exclude reference="P9K-dS-3dp"/>
+                                <exclude reference="0pL-aJ-Lm7"/>
+                                <exclude reference="ZCr-vG-KHq"/>
+                                <exclude reference="bS1-tC-gWm"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="XBK-uV-iga"/>
-                                <include reference="peb-MP-YXN"/>
                                 <include reference="wZh-bo-Xcc"/>
+                                <include reference="peb-MP-YXN"/>
+                                <include reference="XBK-uV-iga"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bS1-tC-gWm"/>
-                                <include reference="Id2-VB-ide"/>
-                                <include reference="P9K-dS-3dp"/>
-                                <include reference="aQ3-Tf-3TE"/>
-                                <include reference="0pL-aJ-Lm7"/>
-                                <include reference="ZCr-vG-KHq"/>
                                 <include reference="XZ1-UF-WUJ"/>
                                 <include reference="ewL-e9-jaz"/>
+                                <include reference="P9K-dS-3dp"/>
+                                <include reference="0pL-aJ-Lm7"/>
+                                <include reference="ZCr-vG-KHq"/>
+                                <include reference="bS1-tC-gWm"/>
                             </mask>
                         </variation>
                     </view>

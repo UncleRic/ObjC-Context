@@ -31,11 +31,11 @@ CGFloat const kWinningLineInset = 8.0;
     
     if (colorString.length == 6) {
         int r, g, b;
-        sscanf([colorString UTF8String], "%2x%2x%2x", &r, &g, &b);
+        sscanf(colorString.UTF8String, "%2x%2x%2x", &r, &g, &b);
         return [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:1.0];
     } else if (colorString.length == 8) {
         int r, g, b, a;
-        sscanf([colorString UTF8String], "%2x%2x%2x%2x", &r, &g, &b, &a);
+        sscanf(colorString.UTF8String, "%2x%2x%2x%2x", &r, &g, &b, &a);
         return [UIColor colorWithRed:(r/255.0) green:(g/255.0) blue:(b/255.0) alpha:(a/255.0)];
     }
     return nil;
